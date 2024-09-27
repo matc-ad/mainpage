@@ -39,7 +39,7 @@ const Header = ({ isDarkMode }) => (
   <header className={`text-center py-20 bg-cover bg-center ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-blue-600 text-white'}`} style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }}>
     <div className={`p-10 rounded-lg ${isDarkMode ? 'bg-black bg-opacity-70' : 'bg-white bg-opacity-50'}`}>
       <h1 className="text-5xl font-extrabold">Benvingut a matc.ad</h1>
-      <p className="mt-4 text-2xl">Els millors serveis per a les teves necessitats</p>
+      <p className="mt-4 text-2xl">Lorem ipsum (no se que poner aqui) dolor sit amet</p>
       <button className={`mt-8 font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ${isDarkMode ? 'bg-blue-500 text-gray-900 hover:bg-blue-600' : 'bg-blue-600 text-white hover:bg-gray-200'}`}>Comença Ara</button>
     </div>
   </header>
@@ -54,26 +54,40 @@ const ModalitatTable = ({ isDarkMode }) => (
         <table className={`min-w-full rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
           <thead>
             <tr>
-              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}>Característica</th>
-              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}>Modalitat 1</th>
-              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}>Modalitat 2</th>
+              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}></th>
+              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}>Simpatitzant</th>
+              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}>Estudiant</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Descripció</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Descripció de la modalitat 1.</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Descripció de la modalitat 2.</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Molts beneficis, a un preu reduit.</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Tots els beneficis.</td>
+            </tr>
+            <tr>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Correu</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>nom.cognom.cognom@correu.matc.ad</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>elquevulguis@matc.ad (i el de simpatitzant!)</td>
+            </tr>
+            <tr>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Subdomini</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>No inclòs</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Inclòs</td>
+            </tr>
+            <tr>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Propers beneficis</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés limitat, segons recursos</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés complet</td>
             </tr>
             <tr>
               <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Preu</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>100€</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>200€</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>5€</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>9€</td>
             </tr>
             <tr>
               <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Durada</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>1 mes</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>2 mesos</td>
+              <td colSpan="2" className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>1 any</td>
             </tr>
           </tbody>
         </table>
