@@ -28,7 +28,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
             ☰
           </button>
         </div>
-        <div className={`space-x-4 flex items-center ${isMenuOpen ? 'flex-col' : 'hidden'} md:flex md:flex-row`}>
+        <div className={`hidden md:flex space-x-4 items-center`}>
           <button onClick={() => handleNavigation('modalitats')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Modalitats</button>
           <button onClick={() => handleNavigation('subdomains')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Subdominis</button>
           <button onClick={() => handleNavigation('faq')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Preguntes Freqüents</button>
@@ -39,6 +39,18 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
           </button>
         </div>
       </div>
+      {isMenuOpen && (
+        <div className="md:hidden mt-4 space-y-2">
+          <button onClick={() => handleNavigation('modalitats')} className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Modalitats</button>
+          <button onClick={() => handleNavigation('subdomains')} className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Subdominis</button>
+          <button onClick={() => handleNavigation('faq')} className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Preguntes Freqüents</button>
+          <a href="/roadmap" className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Roadmap</a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Formulari de contacte</a>
+          <button onClick={toggleDarkMode} className="block w-full text-center mt-2 p-2 rounded-full bg-blue-600 text-white">
+            {isDarkMode ? 'Mode Clar' : 'Mode Fosc'}
+          </button>
+        </div>
+      )}
     </nav>
   );
 };
