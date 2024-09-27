@@ -4,12 +4,14 @@ import Cookies from 'js-cookie';
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavigation = (path) => {
     navigate('/');
     setTimeout(() => {
       document.getElementById(path).scrollIntoView({ behavior: 'smooth' });
     }, 100);
+    setIsMenuOpen(false); // Close the menu after navigation
   };
 
   return (
@@ -20,8 +22,13 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
           onClick={() => navigate('/')}
         >
           matc.ad
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`transition duration-300 ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+            ☰
+          </button>
         </div>
-        <div className="space-x-4 flex items-center">
+      </div>
+      <div className={`space-x-4 flex items-center ${isMenuOpen ? 'flex-col' : 'hidden'} md:flex md:flex-row`}>
           <button onClick={() => handleNavigation('modalitats')} className={`transition duration-300 ${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-800 hover:text-gray-600'}`}>Modalitats</button>
           <button onClick={() => handleNavigation('subdomains')} className={`transition duration-300 ${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-800 hover:text-gray-600'}`}>Subdominis</button>
           <a href="/roadmap" className={`transition duration-300 ${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-800 hover:text-gray-600'}`}>Roadmap</a>
@@ -61,38 +68,38 @@ const ModalitatTable = ({ isDarkMode }) => (
           </thead>
           <tbody>
             <tr>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Descripció</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Molts beneficis, a un preu reduit.</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Tots els beneficis.</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Descripció</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Molts beneficis, a un preu reduit.</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Tots els beneficis.</td>
             </tr>
             <tr>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Correu</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>nom.cognom.cognom@correu.matc.ad</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>elquevulguis@matc.ad (i el de simpatitzant!)</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Correu</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>nom.cognom.cognom@correu.matc.ad</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>elquevulguis@matc.ad (i el de simpatitzant!)</td>
             </tr>
             <tr>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Subdomini</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>No inclòs</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Inclòs</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Subdomini</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>No inclòs</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Inclòs</td>
             </tr>
             <tr>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Propers beneficis</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés limitat, segons recursos</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés complet</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Propers beneficis</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés limitat, segons recursos</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés complet</td>
             </tr>
             <tr>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Preu</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>5€</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>9€</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Preu</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>5€</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>9€</td>
             </tr>
             <tr>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Durada</td>
-              <td colSpan="2" className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>1 any</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Durada</td>
+              <td colSpan="2" className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>1 any</td>
             </tr>
             <tr>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Requisits</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Cap</td>
-              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Ser estudiant</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Requisits</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Cap</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Ser estudiant</td>
             </tr>
           </tbody>
         </table>
