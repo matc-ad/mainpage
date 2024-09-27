@@ -89,6 +89,11 @@ const ModalitatTable = ({ isDarkMode }) => (
               <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Durada</td>
               <td colSpan="2" className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>1 any</td>
             </tr>
+            <tr>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Requisits</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Cap</td>
+              <td className={`py-4 px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Ser estudiant</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -138,7 +143,12 @@ const Roadmap = ({ isDarkMode, toggleDarkMode }) => (
     <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
     <div className="container mx-auto py-20">
       <h1 className="text-4xl font-extrabold">Roadmap</h1>
-      <p className="mt-4">Aquí pots veure el nostre roadmap.</p>
+      <p className="mt-4">Aquí pots veure el nostre roadmap. <strong>Tot això és momentani</strong></p>
+      <ul className="mt-4 list-disc list-inside">
+        <li>Creació logo matc.ad (.svg)</li>
+        <li>Fer més bonica la pàgina web</li>
+        <li>Creació d'un roadmap correcte amb les coses que volem fer després de tot això</li>
+      </ul>
     </div>
     <Footer isDarkMode={isDarkMode} />
   </>
