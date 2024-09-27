@@ -15,25 +15,26 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   };
 
   return (
-    <nav className={`p-4 shadow-lg ${isDarkMode ? 'bg-gray-900' : 'bg-gray-200'}`}>
+    <nav className={`p-4 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-300'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <div 
-          className={`text-2xl font-extrabold cursor-pointer ${isDarkMode ? 'text-white' : 'text-gray-800'}`}
+          className={`text-2xl font-extrabold cursor-pointer ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}
           onClick={() => navigate('/')}
         >
           matc.ad
+        </div>
         <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`transition duration-300 ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             ☰
           </button>
         </div>
-      </div>
-      <div className={`space-x-4 flex items-center ${isMenuOpen ? 'flex-col' : 'hidden'} md:flex md:flex-row`}>
-          <button onClick={() => handleNavigation('modalitats')} className={`transition duration-300 ${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-800 hover:text-gray-600'}`}>Modalitats</button>
-          <button onClick={() => handleNavigation('subdomains')} className={`transition duration-300 ${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-800 hover:text-gray-600'}`}>Subdominis</button>
-          <a href="/roadmap" className={`transition duration-300 ${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-800 hover:text-gray-600'}`}>Roadmap</a>
-          <a href="#contact" className={`transition duration-300 ${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-800 hover:text-gray-600'}`}>Formulari de contacte</a>
-          <button onClick={toggleDarkMode} className="ml-4 p-2 rounded-full bg-blue-500 text-white">
+        <div className={`space-x-4 flex items-center ${isMenuOpen ? 'flex-col' : 'hidden'} md:flex md:flex-row`}>
+          <button onClick={() => handleNavigation('modalitats')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Modalitats</button>
+          <button onClick={() => handleNavigation('subdomains')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Subdominis</button>
+          <button onClick={() => handleNavigation('faq')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Preguntes Freqüents</button>
+          <a href="/roadmap" className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Roadmap</a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Formulari de contacte</a>
+          <button onClick={toggleDarkMode} className="ml-4 p-2 rounded-full bg-blue-600 text-white">
             {isDarkMode ? 'Mode Clar' : 'Mode Fosc'}
           </button>
         </div>
@@ -42,64 +43,72 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   );
 };
 
-const Header = ({ isDarkMode }) => (
-  <header className={`text-center py-20 bg-cover bg-center ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-blue-600 text-white'}`} style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }}>
-    <div className={`p-10 rounded-lg ${isDarkMode ? 'bg-black bg-opacity-70' : 'bg-white bg-opacity-50'}`}>
-      <h1 className="text-5xl font-extrabold">Benvingut a matc.ad</h1>
-      <p className="mt-4 text-2xl">Lorem ipsum (no se que poner aqui) dolor sit amet</p>
-      <button className={`mt-8 font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ${isDarkMode ? 'bg-blue-500 text-gray-900 hover:bg-blue-600' : 'bg-blue-600 text-white hover:bg-gray-200'}`}>Comença Ara</button>
-    </div>
-  </header>
-);
+const Header = ({ isDarkMode }) => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+  };
+
+  return (
+    <header className={`text-center py-20 bg-cover bg-center ${isDarkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-300 text-gray-800'}`} style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }}>
+      <div className={`p-10 rounded-lg ${isDarkMode ? 'bg-gray-800 bg-opacity-90' : 'bg-gray-300 bg-opacity-90'}`}>
+        <h1 className="text-5xl font-extrabold">Benvingut a matc.ad</h1>
+        <p className="mt-4 text-2xl">Lorem ipsum (no sé què posar aquí) dolor sit amet.</p>
+        <button onClick={handleButtonClick} className={`mt-8 font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ${isDarkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>Comença Ara</button>
+      </div>
+    </header>
+  );
+};
 
 const ModalitatTable = ({ isDarkMode }) => (
-  <section id="modalitats" className={`py-20 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
+  <section id="modalitats" className={`py-20 ${isDarkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-300 text-gray-800'}`}>
     <div className="container mx-auto text-center">
-      <h2 className={`text-4xl font-extrabold ${isDarkMode ? 'text-blue-400' : 'text-gray-800'}`}>Les modalitats</h2>
+      <h2 className={`text-4xl font-extrabold ${isDarkMode ? 'text-blue-400' : 'text-blue-700'}`}>Les modalitats</h2>
       <p className={`mt-4 text-lg ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Comparació de les modalitats disponibles.</p>
       <div className="mt-12 overflow-x-auto">
-        <table className={`min-w-full rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
+        <table className={`min-w-full rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-700 text-gray-200' : 'bg-gray-200 text-gray-800'}`}>
           <thead>
             <tr>
-              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}></th>
-              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}>Simpatitzant</th>
-              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-700 text-blue-400' : 'bg-gray-200 text-gray-800'} font-bold uppercase text-sm text-center`}>Estudiant</th>
+              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-600 text-blue-400' : 'bg-gray-400 text-gray-800'} font-bold uppercase text-sm text-center`}></th>
+              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-600 text-blue-400' : 'bg-gray-400 text-gray-800'} font-bold uppercase text-sm text-center`}>Simpatitzant</th>
+              <th className={`py-4 px-6 ${isDarkMode ? 'bg-gray-600 text-blue-400' : 'bg-gray-400 text-gray-800'} font-bold uppercase text-sm text-center`}>Estudiant</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Descripció</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Molts beneficis, a un preu reduit.</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Tots els beneficis.</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Descripció</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Molts beneficis, a un preu reduït.</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Tots els beneficis.</td>
             </tr>
             <tr>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Correu</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>nom.cognom.cognom@correu.matc.ad</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>elquevulguis@matc.ad (i el de simpatitzant!)</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Correu</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>nom.cognom.cognom@correu.matc.ad</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>elquevulguis@matc.ad (i el de simpatitzant!)</td>
             </tr>
             <tr>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Subdomini</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>No inclòs</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Inclòs</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Subdomini</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>No inclòs.</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Inclòs.</td>
             </tr>
             <tr>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Propers beneficis</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés limitat, segons recursos</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Accés complet</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Propers beneficis</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Accés limitat, segons recursos.</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Accés complet.</td>
             </tr>
             <tr>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Preu</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>5€</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>9€</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Preu</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>5€</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>9€</td>
             </tr>
             <tr>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Durada</td>
-              <td colSpan="2" className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>1 any</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Durada</td>
+              <td colSpan="2" className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>1 any.</td>
             </tr>
             <tr>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Requisits</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Cap</td>
-              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>Ser estudiant</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Requisits</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Cap.</td>
+              <td className={`py-4 px-2 md:px-6 border-b ${isDarkMode ? 'border-gray-600' : 'border-gray-400'}`}>Ser estudiant.</td>
             </tr>
           </tbody>
         </table>
@@ -109,16 +118,16 @@ const ModalitatTable = ({ isDarkMode }) => (
 );
 
 const SubdomainCard = ({ title, description, isDarkMode }) => (
-  <div className={`p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
+  <div className={`p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ${isDarkMode ? 'bg-gray-700 text-gray-200' : 'bg-gray-200 text-gray-800'}`}>
     <h3 className="text-2xl font-bold text-blue-400">{title}</h3>
     <p className="mt-4">{description}</p>
   </div>
 );
 
 const Subdomains = ({ isDarkMode }) => (
-  <section id="subdomains" className={`py-20 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
+  <section id="subdomains" className={`py-20 ${isDarkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-300 text-gray-800'}`}>
     <div className="container mx-auto text-center">
-      <h2 className={`text-4xl font-extrabold ${isDarkMode ? 'text-blue-400' : 'text-gray-800'}`}>Els subdominis</h2>
+      <h2 className={`text-4xl font-extrabold ${isDarkMode ? 'text-blue-400' : 'text-blue-700'}`}>Els subdominis</h2>
       <p className={`mt-4 text-lg ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Explora els subdominis existents.</p>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         <SubdomainCard title="Subdomini 1" description="Descripció del subdomini 1." isDarkMode={isDarkMode} />
@@ -129,8 +138,30 @@ const Subdomains = ({ isDarkMode }) => (
   </section>
 );
 
+const FAQ = ({ isDarkMode }) => (
+  <section id="faq" className={`py-20 ${isDarkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-300 text-gray-800'}`}>
+    <div className="container mx-auto text-center">
+      <h2 className={`text-4xl font-extrabold ${isDarkMode ? 'text-blue-400' : 'text-blue-700'}`}>Preguntes Freqüents</h2>
+      <div className="mt-12 text-left">
+        <div className="mb-8">
+          <h3 className={`text-2xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-blue-700'}`}>Per què?</h3>
+          <p className={`mt-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Som un grup d'estudiants que ens va fer gràcia poder tenir el correu @matc.ad. Fa poc Andorra va començar a permetre la compra dels .ad i per això ho hem comprat. Hem decidit crear aquesta pàgina web i més serveis que ens seran útils o divertits.</p>
+        </div>
+        <div className="mb-8">
+          <h3 className={`text-2xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-blue-700'}`}>Pregunta 2</h3>
+          <p className={`mt-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Resposta a la pregunta 2.</p>
+        </div>
+        <div className="mb-8">
+          <h3 className={`text-2xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-blue-700'}`}>Pregunta 3</h3>
+          <p className={`mt-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Resposta a la pregunta 3.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 const Footer = ({ isDarkMode }) => (
-  <footer className={`text-center py-6 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-800'}`}>
+  <footer className={`text-center py-6 ${isDarkMode ? 'bg-gray-700 text-gray-200' : 'bg-gray-400 text-gray-800'}`}>
     <p>&copy; 2024 matc.ad. Tots els drets reservats.</p>
   </footer>
 );
@@ -141,6 +172,7 @@ const Home = ({ isDarkMode, toggleDarkMode }) => (
     <Header isDarkMode={isDarkMode} />
     <ModalitatTable isDarkMode={isDarkMode} />
     <Subdomains isDarkMode={isDarkMode} />
+    <FAQ isDarkMode={isDarkMode} />
     <Footer isDarkMode={isDarkMode} />
   </>
 );
@@ -150,11 +182,11 @@ const Roadmap = ({ isDarkMode, toggleDarkMode }) => (
     <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
     <div className="container mx-auto py-20">
       <h1 className="text-4xl font-extrabold">Roadmap</h1>
-      <p className="mt-4">Aquí pots veure el nostre roadmap. <strong>Tot això és momentani</strong></p>
+      <p className="mt-4">Aquí pots veure el nostre roadmap. <strong>Tot això és momentani.</strong></p>
       <ul className="mt-4 list-disc list-inside">
-        <li>Creació logo matc.ad (.svg)</li>
-        <li>Fer més bonica la pàgina web</li>
-        <li>Creació d'un roadmap correcte amb les coses que volem fer després de tot això</li>
+        <li>Creació logo matc.ad (.svg).</li>
+        <li>Fer més bonica la pàgina web.</li>
+        <li>Creació d'un roadmap correcte amb les coses que volem fer després de tot això.</li>
       </ul>
     </div>
     <Footer isDarkMode={isDarkMode} />
@@ -176,7 +208,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    document.body.className = isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800';
+    document.body.className = isDarkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-300 text-gray-800';
   }, [isDarkMode]);
 
   return (
