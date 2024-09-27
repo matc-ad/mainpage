@@ -133,7 +133,7 @@ const Roadmap = ({ isDarkMode, toggleDarkMode }) => (
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = Cookies.get('darkMode');
-    return savedMode === 'true' || false;
+    return savedMode === 'true' || savedMode === undefined; // Default to dark mode if no cookie is set
   });
 
   const toggleDarkMode = () => {
