@@ -58,7 +58,7 @@ export const navLinks = [
     { label: 'Modalitats', path: 'modalitats' },
     { label: 'Subdominis', path: 'subdomains' },
     { label: 'Preguntes Freqüents', path: 'faq' },
-    { label: 'Roadmap', href: '/roadmap' },
+    { label: 'Roadmap', path: 'roadmap' },
     { label: 'Formulari de contacte', href: formulariContacte}
 ];
 
