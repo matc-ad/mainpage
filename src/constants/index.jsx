@@ -89,7 +89,7 @@ export const colorsOptions = {
 };
 
 export const subdomainsOptions = [
-    { title: "www", description: "Efectivament. www no ès mort, ja que mostra aquesta pàgina web. Apart d'això, també fa de acurtador d'enllaços utils per la comunitat. Vols saber totes? Fes https://matc.ad/totes (nota: encara no tenim matc.ad pero pots fer https://matcad.pages.dev/totes)", url: "https://matc.ad" },
+    { title: "www", description: "Efectivament. www no ès mort, ja que mostra aquesta pàgina web. Apart d'això, també fa de acurtador d'enllaços utils per la comunitat. Vols saber totes? Fes https://matc.ad/redireccions (nota: encara no tenim matc.ad pero pots fer https://matcad.pages.dev/redireccions)", url: "https://matc.ad" },
     { title: "repster", description: "Pagina de RepSter.", url: "https://repster.matc.ad" },
     { title: "peix", description: "Acudits de peixos. Res més.", url: "https://peix.matc.ad"},
 ];
