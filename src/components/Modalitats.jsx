@@ -13,7 +13,7 @@ const Modalitats = ({ isDarkMode }) => {
                 <div className="flex flex-wrap justify-center mt-12">
                     {modalitatsOptions.map((option, index) => (
                         <div key={index} className="w-full sm:w-2/3 lg:w-1/2 p-4 flex justify-center">
-                            <div className={`p-6 border ${colors.border} ${colors.divBackground} rounded-xl text-center flex flex-col w-full `}>
+                            <div className={`p-5 border ${colors.border} ${colors.divBackground} rounded-xl text-center flex flex-col w-full `}>
                                 <p className="text-4xl mb-4">
                                     {option.title}
                                 </p>
