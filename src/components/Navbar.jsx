@@ -41,7 +41,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                     </button>
                 </div>
             </div>
-            <div className={`xs:hidden mt-4 space-y-2 transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className={`xs:hidden mt-4 space-y-2 transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
                 {navLinks.map((link, index) => (
                     link.href ? 
                     <a key={index} href={link.href} className={`block w-full text-center text-lg ${colors.text} hover:${colors.title}`}>{link.label}</a> :
