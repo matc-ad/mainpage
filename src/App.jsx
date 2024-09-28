@@ -6,10 +6,10 @@ import NonExistent from './pages/NonExistent';
 import RedireccionsPage from './pages/RedireccionsPage';
 import { colorsOptions, redireccions } from './constants';
 
-const RedirectTo = (url) => {
+const RedirectTo = ({ url }) => {
     useEffect(() => {
         window.location.href = url;
-    }, []);
+    }, [url]);
     return null;
 };
 
@@ -38,7 +38,7 @@ const App = () => {
                 <Route path="/" element={<Home isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
                 <Route path="/redireccions" element={<RedireccionsPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
                 {redireccions.map((item, index) => (
-                        <Route key={index} path={item.path} element={<RedirectTo url={item.url} />} />
+                        <Route key={index} path={item.page} element={<RedirectTo url={item.url} />} />
                     ))}
                 <Route path="*" element={<NonExistent isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
             </Routes>
