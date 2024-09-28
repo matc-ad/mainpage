@@ -35,7 +35,7 @@ export const roadmapItems = [
         date: "16/10/2024"
     },
     {
-        description: "Creació subodminis facils (peix, transparencia) de la administraciò.",
+        description: "Creació subdominis facils (peix, transparencia) de la administraciò.",
         date: "4/10/2024"
     },
     {

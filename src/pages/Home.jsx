@@ -10,7 +10,7 @@ import Roadmap from '../components/Roadmap';
 const Home = ({ isDarkMode, toggleDarkMode }) => (
     <>
         <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-        <div id="header" className="container mx-auto py-24">
+        <div id="header" className="container mx-auto py-24 hyphens-auto">
             <Header isDarkMode={isDarkMode} />
             <Modalitats isDarkMode={isDarkMode} />
             <Subdomains isDarkMode={isDarkMode} />
