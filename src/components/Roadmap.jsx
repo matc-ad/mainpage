@@ -31,8 +31,8 @@ const Roadmap = ({ isDarkMode }) => {
                 <ul className="mt-8 space-y-4 text-lg">
                     {sortedRoadmapItems.map((item, index) => (
                         <li key={index} className={`flex items-center justify-between p-6 border ${colors.border} rounded-lg shadow-md ${colors.divBackground}`}>
-                            <FaStar />
-                            <span className={`ml-2 ${colors.text}`}>{item.description}</span>
+                            <FaStar className="flex-shrink-0" />
+                            <span className={`ml-2 flex-grow ${colors.text}`}>{item.description}</span>
                             <span className={`text-sm ${colors.paragraph}`}>{item.date}</span>
                         </li>
                     ))}

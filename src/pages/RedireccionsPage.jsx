@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const NonExistent = ({ isDarkMode, toggleDarkMode }) => (
     <>
         <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-        <div id="header" className="container mx-auto py-20">
+        <div id="header" className="container mx-auto py-24">
             <Totes isDarkMode={isDarkMode} />
         </div>
         <Footer isDarkMode={isDarkMode} />

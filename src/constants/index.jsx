@@ -20,7 +20,7 @@ export const modalitatsOptions = [
             "elquevulguis@matc.ad (i l'altre!)",
             "Subdomini inclòs.",
             "Accés complet.",
-            "Requisit: ser estudiant."
+            "Requisit: ser estudiant de MatCAD."
         ]
     }
 ];
@@ -35,7 +35,7 @@ export const roadmapItems = [
         date: "16/10/2024"
     },
     {
-        description: "Creació subodminis facils (peix, transparencia) administraciò.",
+        description: "Creació subodminis facils (peix, transparencia) de la administraciò.",
         date: "4/10/2024"
     },
     {
@@ -43,7 +43,7 @@ export const roadmapItems = [
         date: "25/10/2024"
     },
     {
-        description: "Creació mailing system.",
+        description: "Creació del mailing system.",
         date: "23/10/2024"
     },
     {
@@ -51,11 +51,11 @@ export const roadmapItems = [
         date: "25/10/2024"
     },
     {
-        description: "Inici editor.matc.ad.",
+        description: "Inici de editor.matc.ad.",
         date: "16/11/2024"
     },
     {
-        description: "Inici git.matc.ad.",
+        description: "Inici de git.matc.ad.",
         date: "13/12/2024"
     }
 ];
