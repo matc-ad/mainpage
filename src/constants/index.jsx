@@ -7,10 +7,9 @@ export const modalitatsOptions = [
         features: [
             "Molts beneficis, a un preu reduït.",
             "nom.cognom.cognom@correu.matc.ad",
-            "No inclòs.",
+            "Subdomini no inclòs.",
             "Accés limitat, segons recursos.",
-            "1 any.",
-            "Cap."
+            "Cap requisit."
         ]
     },
     {
@@ -19,10 +18,9 @@ export const modalitatsOptions = [
         features: [
             "Tots els beneficis.",
             "elquevulguis@matc.ad (i l'altre!)",
-            "Inclòs.",
+            "Subdomini inclòs.",
             "Accés complet.",
-            "1 any.",
-            "Ser estudiant."
+            "Requisit: ser estudiant."
         ]
     }
 ];

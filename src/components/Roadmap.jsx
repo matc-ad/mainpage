@@ -30,10 +30,10 @@ const Roadmap = ({ isDarkMode }) => {
                 <p className={`mt-4 text-lg ${colors.paragraph}`}>Aquí pots veure el nostre full de ruta amb les dates en les què creiem que estarà llest.</p>
                 <ul className="mt-8 space-y-4 text-lg">
                     {sortedRoadmapItems.map((item, index) => (
-                        <li key={index} className={`flex items-center p-6 border ${colors.border} rounded-lg shadow-md ${colors.divBackground}`}>
+                        <li key={index} className={`flex items-center justify-between p-6 border ${colors.border} rounded-lg shadow-md ${colors.divBackground}`}>
                             <FaStar />
                             <span className={`ml-2 ${colors.text}`}>{item.description}</span>
-                            <span className={`ml-auto text-sm ${colors.paragraph}`}>{item.date}</span>
+                            <span className={`text-sm ${colors.paragraph}`}>{item.date}</span>
                         </li>
                     ))}
                 </ul>
