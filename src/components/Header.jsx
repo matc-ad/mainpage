@@ -9,7 +9,7 @@ const Header = ({ isDarkMode }) => {
     const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
 
     return (
-        <header id="header" className={`text-center py-20 bg-cover bg-center ${colors.background} ${colors.text}`} style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }}>
+        <header className={`text-center py-5 bg-cover bg-center ${colors.background} ${colors.text}`} style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }}>
             <div className={`p-6 border ${colors.border} rounded-lg ${colors.divBackground} bg-opacity-90`}>
                 <h1 className={`text-5xl font-extrabold ${colors.title}`}>Benvingut a matc.ad</h1>
                 <p className={`mt-4 text-2xl ${colors.paragraph}`}>Lorem ipsum (no sé què posar aquí) dolor sit amet.</p>

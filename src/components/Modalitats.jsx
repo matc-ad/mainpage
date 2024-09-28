@@ -6,7 +6,7 @@ const Modalitats = ({ isDarkMode }) => {
     const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
 
     return (
-        <section id="modalitats" className={`py-20 ${colors.background} ${colors.text}`}>
+        <section id="modalitats" className={`py-5 ${colors.background} ${colors.text}`}>
             <div className="container mx-auto text-center px-4">
                 <h2 className={`text-4xl font-extrabold ${colors.title}`}>Les modalitats</h2>
                 <p className={`mt-4 text-lg ${colors.paragraph}`}>Comparació de les modalitats disponibles.</p>

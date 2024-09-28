@@ -24,7 +24,7 @@ const Roadmap = ({ isDarkMode }) => {
     const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
 
     return (
-        <section id="roadmap" className={`py-20 ${colors.background} ${colors.text}`}>
+        <section id="roadmap" className={`py-5 ${colors.background} ${colors.text}`}>
             <div className="container mx-auto text-center px-4">
                 <h1 className={`text-4xl font-extrabold ${colors.title}`}>Full de ruta</h1>
                 <p className={`mt-4 text-lg ${colors.paragraph}`}>Aquí pots veure el nostre full de ruta amb les dates en les què creiem que estarà llest.</p>

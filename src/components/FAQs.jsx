@@ -5,7 +5,7 @@ const FAQs = ({ isDarkMode }) => {
     const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
 
     return (
-        <section id="faq" className={`py-20 px-4 sm:px-6 lg:px-8 ${colors.background} ${colors.text}`}>
+        <section id="faq" className={`py-5 px-4 sm:px-6 lg:px-8 ${colors.background} ${colors.text}`}>
             <div className="container mx-auto text-center">
                 <h2 className={`text-4xl font-extrabold ${colors.title}`}>Preguntes Freqüents</h2>
                 <div className="mt-12 text-left">

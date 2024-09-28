@@ -46,20 +46,21 @@ export const roadmapItems = [
     }
 ];
 
+export const formulariContacte = "https://matc.ad/formulari";
+
 export const preguntesFreq = [
     { question: "Per què?", answer: "Som un grup d'estudiants que ens va fer gràcia poder tenir el correu @matc.ad. Fa poc Andorra va començar a permetre la compra dels .ad i per això ho hem comprat. Hem decidit crear aquesta pàgina web i més serveis que ens seran útils o divertits." },
     { question: "Pregunta 2", answer: "Resposta a la pregunta 2." },
     { question: "Pregunta 3", answer: "Resposta a la pregunta 3." },
 ];
 
-export const formulariContacte = "https://youtu.be/dQw4w9WgXcQ";
-
 export const navLinks = [
     { label: 'Modalitats', path: 'modalitats' },
     { label: 'Subdominis', path: 'subdomains' },
     { label: 'Preguntes Freqüents', path: 'faq' },
     { label: 'Roadmap', path: 'roadmap' },
-    { label: 'Formulari de contacte', href: formulariContacte}
+    { label: 'Formulari de contacte', href: formulariContacte},
+    { label: 'Redireccions', href: '/redireccions' }
 ];
 
 export const colorsOptions = {
@@ -88,7 +89,15 @@ export const colorsOptions = {
 };
 
 export const subdomainsOptions = [
-    { title: "www", description: "Efectivament. www no ès mort, ja que mostra aquesta pàgina web. Apart d'això, també fa de acurtador d'enllaços utils per la comunitat. Per exemple, prova a escriure https://matc.ad/song (nota: encara no tenim matc.ad pero pots fer matcad.pages.dev/song)", url: "https://matc.ad" },
+    { title: "www", description: "Efectivament. www no ès mort, ja que mostra aquesta pàgina web. Apart d'això, també fa de acurtador d'enllaços utils per la comunitat. Vols saber totes? Fes https://matc.ad/totes (nota: encara no tenim matc.ad pero pots fer https://matcad.pages.dev/totes)", url: "https://matc.ad" },
     { title: "repster", description: "Pagina de RepSter.", url: "https://repster.matc.ad" },
     { title: "peix", description: "Acudits de peixos. Res més.", url: "https://peix.matc.ad"},
+];
+
+export const redireccions = [
+    { page: "repster", url: "https://repster.matc.ad"},
+    { page: "peix", url: "https://peix.matc.ad"},
+    { page: "apunts", url: "https://github.com/TheRepSter/Apunts-MatCAD"},
+    { page: "song", url: "https://youtu.be/dQw4w9WgXcQ"},
+    { page: "formulari", url: "https://youtu.be/dQw4w9WgXcQ"}
 ];
