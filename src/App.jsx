@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import Home from './pages/Home';
-import Roadmap from './pages/Roadmap';
+import Roadmap from './components/Roadmap';
+import { colorsOptions } from './constants';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -19,7 +20,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    document.body.className = isDarkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-300 text-gray-800';
+    const mode = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
+    document.body.className = `${mode.background} ${mode.text}`;
   }, [isDarkMode]);
 
   return (

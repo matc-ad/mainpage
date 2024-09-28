@@ -5,6 +5,7 @@ import Modalitats from '../components/Modalitats';
 import Subdomains from '../components/Subdomains';
 import FAQs from '../components/FAQs';
 import Footer from '../components/Footer';
+import Roadmap from '../components/Roadmap';
 
 const Home = ({ isDarkMode, toggleDarkMode }) => (
     <>
@@ -14,6 +15,7 @@ const Home = ({ isDarkMode, toggleDarkMode }) => (
             <Modalitats isDarkMode={isDarkMode} />
             <Subdomains isDarkMode={isDarkMode} />
             <FAQs isDarkMode={isDarkMode} />
+            <Roadmap isDarkMode={isDarkMode} />
         </div>
         <Footer isDarkMode={isDarkMode} />
     </>

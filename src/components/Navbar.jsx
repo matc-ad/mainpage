@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { navLinks, colorsOptions } from '../constants';
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
     const navigate = useNavigate();
@@ -10,46 +11,46 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
         setTimeout(() => {
             document.getElementById(path).scrollIntoView({ behavior: 'smooth' });
         }, 100);
-        setIsMenuOpen(false); // Close the menu after navigation
+        setIsMenuOpen(false);
     };
 
+    const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
+
     return (
-        <nav className={`p-4 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-300'}`}>
+        <nav className={`fixed top-0 left-0 w-full p-4 shadow-lg z-50 ${colors.background}`}>
             <div className="container mx-auto flex justify-between items-center">
                 <div 
-                    className={`text-2xl font-extrabold cursor-pointer ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}
-                    onClick={() => navigate('/')}
+                    className={`text-2xl font-extrabold cursor-pointer ${colors.text}`}
+                    onClick={() => handleNavigation('header')}
                 >
                     matc.ad
                 </div>
                 <div className="md:hidden">
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-2xl">
                         ☰
                     </button>
                 </div>
-                <div className={`hidden md:flex space-x-4 items-center`}>
-                    <button onClick={() => handleNavigation('modalitats')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Modalitats</button>
-                    <button onClick={() => handleNavigation('subdomains')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Subdominis</button>
-                    <button onClick={() => handleNavigation('faq')} className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Preguntes Freqüents</button>
-                    <a href="/roadmap" className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Roadmap</a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className={`transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Formulari de contacte</a>
-                    <button onClick={toggleDarkMode} className="ml-4 p-2 rounded-full bg-blue-600 text-white">
+                <div className="hidden md:flex space-x-4 items-center">
+                    {navLinks.map((link, index) => (
+                        link.href ? 
+                        <a key={index} href={link.href} className={`${colors.text} hover:${colors.title}`}>{link.label}</a> :
+                        <button key={index} onClick={() => handleNavigation(link.path)} className={`${colors.text} hover:${colors.title}`}>{link.label}</button>
+                    ))}
+                    <button onClick={toggleDarkMode} className={`ml-4 p-2 rounded-full w-32 h-10 ${colors.buttonBackground} ${colors.buttonText} ${colors.buttonHoverBackground}`}>
                         {isDarkMode ? 'Mode Clar' : 'Mode Fosc'}
                     </button>
                 </div>
             </div>
-            {isMenuOpen && (
-                <div className="md:hidden mt-4 space-y-2">
-                    <button onClick={() => handleNavigation('modalitats')} className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Modalitats</button>
-                    <button onClick={() => handleNavigation('subdomains')} className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Subdominis</button>
-                    <button onClick={() => handleNavigation('faq')} className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Preguntes Freqüents</button>
-                    <a href="/roadmap" className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Roadmap</a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className={`block w-full text-center transition duration-300 ${isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-700'}`}>Formulari de contacte</a>
-                    <button onClick={toggleDarkMode} className="block w-full text-center mt-2 p-2 rounded-full bg-blue-600 text-white">
-                        {isDarkMode ? 'Mode Clar' : 'Mode Fosc'}
-                    </button>
-                </div>
-            )}
+            <div className={`md:hidden mt-4 space-y-2 transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
+                {navLinks.map((link, index) => (
+                    link.href ? 
+                    <a key={index} href={link.href} className={`block w-full text-center ${colors.text} hover:${colors.title}`}>{link.label}</a> :
+                    <button key={index} onClick={() => handleNavigation(link.path)} className={`block w-full text-center ${colors.text} hover:${colors.title}`}>{link.label}</button>
+                ))}
+                <button onClick={toggleDarkMode} className={`block w-full text-center mt-2 p-2 rounded-full w-32 h-10 ${colors.buttonBackground} ${colors.buttonText} ${colors.buttonHoverBackground}`}>
+                    {isDarkMode ? 'Mode Clar' : 'Mode Fosc'}
+                </button>
+            </div>
         </nav>
     );
 };
