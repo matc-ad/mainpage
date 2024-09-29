@@ -27,10 +27,6 @@ export const modalitatsOptions = [
 
 export const roadmapItems = [
     {
-        description: "Creació logo matc.ad (.svg).",
-        date: "29/09/2024"
-    },
-    {
         description: "Conseguim matc.ad.",
         date: "16/10/2024"
     },
