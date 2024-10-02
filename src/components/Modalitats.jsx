@@ -22,7 +22,7 @@ const ModalitatCard = ({ option, colors }) => (
 			</ul>
 		</div>
 		<div
-			className={`p-4 border-4 ${colors.border} w-3/4 sm:w-2/3 lg:w-1/2 ${colors.importantBackground} rounded-b-xl w-full shadow-2xl transform transition-transform hover:scale-110 mx-auto`}
+			className={`p-4 border-4 ${colors.border} w-3/4 xl:w-1/2 ${colors.importantBackground} rounded-b-xl shadow-2xl transform transition-transform mx-auto`}
 		>
 			<p className={`${colors.text} font-bold text-2xl mb-2`}>
 				Requisits destacats:
