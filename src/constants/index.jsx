@@ -7,8 +7,8 @@ export const modalitatsOptions = [
 			"nom.cognom.cognom@correu.matc.ad",
 			"Subdomini no inclòs.",
 			"Accés limitat, segons recursos.",
-			"Cap requisit.",
 		],
+		requisits: "Cap",
 	},
 	{
 		title: "Estudiant",
@@ -18,8 +18,8 @@ export const modalitatsOptions = [
 			"elquevulguis@matc.ad (i l'altre!)",
 			"Subdomini inclòs.",
 			"Accés complet.",
-			"Requisit: ser estudiant de MatCAD.",
 		],
+		requisits: "Ser estudiant de MatCAD.",
 	},
 ];
 
@@ -97,6 +97,7 @@ export const colorsOptions = {
 		title: "text-blue-400",
 		paragraph: "text-gray-300",
 		border: "border-neutral-600",
+		importantBackground: "bg-purple-900",
 		buttonBackground: "bg-blue-500",
 		buttonText: "text-gray-800",
 		buttonHoverBackground: "hover:bg-blue-600",
@@ -108,6 +109,7 @@ export const colorsOptions = {
 		title: "text-green-700",
 		paragraph: "text-gray-700",
 		border: "border-neutral-500",
+		importantBackground: "bg-purple-500",
 		buttonBackground: "bg-green-600",
 		buttonText: "text-white",
 		buttonHoverBackground: "hover:bg-green-700",

@@ -2,13 +2,11 @@ import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
 import { colorsOptions, roadmapItems } from "../constants";
 
-// Funció per convertir la data al format dd/mm/yyyy
 const formatDate = (dateStr) => {
 	const [day, month, year] = dateStr.split("/");
 	return `${day.padStart(2, "0")}/${month.padStart(2, "0")}/${year}`;
 };
 
-// Ordenar roadmapItems per data
 const sortedRoadmapItems = roadmapItems
 	.map((item) => ({
 		...item,
@@ -21,6 +19,24 @@ const sortedRoadmapItems = roadmapItems
 			new Date(yearA, monthA - 1, dayA) - new Date(yearB, monthB - 1, dayB)
 		);
 	});
+
+const RoadmapItem = ({ item, colors }) => (
+	<li
+		className={`flex items-center justify-between p-6 border ${colors.border} rounded-lg shadow-md ${colors.divBackground}`}
+	>
+		<FaStar className="flex-shrink-0" />
+		<span className={`ml-2 flex-grow ${colors.text}`}>{item.description}</span>
+		<span className={`text-sm ${colors.paragraph}`}>{item.date}</span>
+	</li>
+);
+
+RoadmapItem.propTypes = {
+	item: PropTypes.shape({
+		description: PropTypes.string.isRequired,
+		date: PropTypes.string.isRequired,
+	}).isRequired,
+	colors: PropTypes.object.isRequired,
+};
 
 const Roadmap = ({ isDarkMode }) => {
 	const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
@@ -40,16 +56,7 @@ const Roadmap = ({ isDarkMode }) => {
 				</p>
 				<ul className="mt-8 space-y-4 text-lg">
 					{sortedRoadmapItems.map((item, index) => (
-						<li
-							key={index}
-							className={`flex items-center justify-between p-6 border ${colors.border} rounded-lg shadow-md ${colors.divBackground}`}
-						>
-							<FaStar className="flex-shrink-0" />
-							<span className={`ml-2 flex-grow ${colors.text}`}>
-								{item.description}
-							</span>
-							<span className={`text-sm ${colors.paragraph}`}>{item.date}</span>
-						</li>
+						<RoadmapItem key={index} item={item} colors={colors} />
 					))}
 				</ul>
 			</div>

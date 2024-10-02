@@ -1,6 +1,21 @@
 import PropTypes from "prop-types";
 import { colorsOptions, preguntesFreq } from "../constants";
 
+const FAQItem = ({ question, answer, colors }) => (
+	<div
+		className={`items-center p-6 border ${colors.border} rounded-lg shadow-md mb-8 ${colors.divBackground}`}
+	>
+		<h3 className={`text-2xl font-bold ${colors.title}`}>{question}</h3>
+		<p className={`mt-2 ${colors.paragraph}`}>{answer}</p>
+	</div>
+);
+
+FAQItem.propTypes = {
+	question: PropTypes.string.isRequired,
+	answer: PropTypes.string.isRequired,
+	colors: PropTypes.object.isRequired,
+};
+
 const FAQs = ({ isDarkMode }) => {
 	const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
 
@@ -15,15 +30,12 @@ const FAQs = ({ isDarkMode }) => {
 				</h2>
 				<div className="mt-12 text-left">
 					{preguntesFreq.map((faq, index) => (
-						<div
+						<FAQItem
 							key={index}
-							className={`items-center p-6 border ${colors.border} rounded-lg shadow-md mb-8 ${colors.divBackground}`}
-						>
-							<h3 className={`text-2xl font-bold ${colors.title}`}>
-								{faq.question}
-							</h3>
-							<p className={`mt-2 ${colors.paragraph}`}>{faq.answer}</p>
-						</div>
+							question={faq.question}
+							answer={faq.answer}
+							colors={colors}
+						/>
 					))}
 				</div>
 			</div>
