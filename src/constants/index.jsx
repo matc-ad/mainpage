@@ -174,4 +174,6 @@ export const randomMessage = [
 	"Recordeu el principi bàsic, sempre hi ha que pensar.",
 	"There are two kinds of people. Those who can extrapolate information.",
 	"Es el vecino el que elige al alcalde y es el alcalde el que quiere que sean los vecinos el alcalde.",
+	"Mai et renunciaré, mai et defraudarè, mai et farè la croqueta i et convertirè en una postra.",
+	"En cuanto al examen, entrará lo que hemos visto hasta ahora, lo que aún no hemos visto no.",
 ];
