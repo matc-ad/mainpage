@@ -5,19 +5,25 @@ import { colorsOptions, navLinks } from "../constants";
 
 const NavbarLink = ({ link, handleNavigation, colors }) =>
 	link.href ? (
-		<a
-			href={link.href}
-			className={`text-lg ${colors.text} hover:${colors.title}`}
-		>
-			{link.label}
-		</a>
+		<>
+			<a
+				href={link.href}
+				className={`text-lg ${colors.text} w-full text-center hover:${colors.title}`}
+			>
+				{link.label}
+			</a>
+			<br />
+		</>
 	) : (
-		<button
-			onClick={() => handleNavigation(link.path)}
-			className={`text-lg ${colors.text} hover:${colors.title}`}
-		>
-			{link.label}
-		</button>
+		<>
+			<button
+				onClick={() => handleNavigation(link.path)}
+				className={`text-lg ${colors.text} w-full text-center hover:${colors.title}`}
+			>
+				{link.label}
+			</button>
+			<br />
+		</>
 	);
 
 NavbarLink.propTypes = {
@@ -81,7 +87,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
 				</div>
 			</div>
 			<div
-				className={`xs:hidden mt-4 space-y-2 transition-all duration-300 ease-in-out transform ${isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`}
+				className={`xs:hidden mt-4 space-y-2 flex flex-col items-center-2 transition-all duration-300 ease-in-out transform ${isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`}
 			>
 				{navLinks.map((link, index) => (
 					<NavbarLink

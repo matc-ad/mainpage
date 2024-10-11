@@ -22,7 +22,7 @@ const ModalitatCard = ({ option, colors }) => (
 			</ul>
 		</div>
 		<div
-			className={`p-4 border-4 ${colors.border} w-3/4 xl:w-1/2 ${colors.importantBackground} rounded-b-xl shadow-2xl transform transition-transform mx-auto`}
+			className={`p-4 border border-t-0 ${colors.border} w-3/4 xl:w-1/2 rounded-b-xl shadow-2xl transform transition-transform mx-auto`}
 		>
 			<p className={`${colors.text} font-bold text-2xl mb-2`}>Requisits:</p>
 			<p className={`${colors.text} text-lg`}>{option.requisits}</p>
