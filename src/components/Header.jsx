@@ -1,12 +1,37 @@
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { colorsOptions, formulariContacte, randomMessage } from "../constants";
 
 const Header = ({ isDarkMode }) => {
+	const [dynamicMessage, setDynamicMessage] = useState("");
+
 	const handleButtonClick = () => {
 		window.location.href = formulariContacte;
 	};
 
 	const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
+
+	useEffect(() => {
+		const handleVisibilityChange = () => {
+			if (document.visibilityState === "visible") {
+				setDynamicMessage(
+					randomMessage[Math.round(Math.random() * randomMessage.length)],
+				);
+			}
+		};
+
+		// Set an initial message when the component mounts
+		setDynamicMessage(
+			randomMessage[Math.round(Math.random() * randomMessage.length)],
+		);
+
+		document.addEventListener("visibilitychange", handleVisibilityChange);
+
+		// Cleanup event listener on component unmount
+		return () => {
+			document.removeEventListener("visibilitychange", handleVisibilityChange);
+		};
+	}, []);
 
 	return (
 		<header
@@ -20,7 +45,7 @@ const Header = ({ isDarkMode }) => {
 					Benvingut a matc.ad
 				</h1>
 				<p className={`text-xl font-sans ${colors.paragraph}`}>
-					{randomMessage[Math.floor(Math.random() * randomMessage.length)]}
+					{dynamicMessage}
 				</p>
 				<button
 					onClick={handleButtonClick}

@@ -5,25 +5,19 @@ import { colorsOptions, navLinks } from "../constants";
 
 const NavbarLink = ({ link, handleNavigation, colors }) =>
 	link.href ? (
-		<>
-			<a
-				href={link.href}
-				className={`text-lg ${colors.text} w-full text-center hover:${colors.title}`}
-			>
-				{link.label}
-			</a>
-			<br />
-		</>
+		<a
+			href={link.href}
+			className={`text-md ${colors.text} w-full text-center hover:${colors.title}`}
+		>
+			{link.label}
+		</a>
 	) : (
-		<>
-			<button
-				onClick={() => handleNavigation(link.path)}
-				className={`text-lg ${colors.text} w-full text-center hover:${colors.title}`}
-			>
-				{link.label}
-			</button>
-			<br />
-		</>
+		<button
+			onClick={() => handleNavigation(link.path)}
+			className={`text-md ${colors.text} w-full text-center hover:${colors.title}`}
+		>
+			{link.label}
+		</button>
 	);
 
 NavbarLink.propTypes = {
@@ -52,7 +46,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 w-full p-4 shadow-lg z-50 ${colors.background}`}
+			className={`fixed top-0 left-0 w-full p-4 shadow-lg z-50 ${colors.navbarBackground}`}
 		>
 			<div className="container mx-auto flex justify-between items-center h-16">
 				<div
@@ -80,7 +74,8 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
 					))}
 					<button
 						onClick={toggleDarkMode}
-						className={`ml-4 p-2 rounded-full w-28 h-12 lg:h-10 ${colors.buttonBackground} ${colors.buttonText} ${colors.buttonHoverBackground}`}
+						className={`ml-4 p-2 rounded-full min-w-28 h-10 items-center justify-center ${colors.buttonBackground} ${colors.buttonText} ${colors.buttonHoverBackground}`}
+						style={{ whiteSpace: "nowrap" }}
 					>
 						{isDarkMode ? "Mode Clar" : "Mode Fosc"}
 					</button>

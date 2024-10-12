@@ -5,7 +5,7 @@ const Subdomains = ({ isDarkMode }) => {
 	const colors = isDarkMode ? colorsOptions.darkMode : colorsOptions.lightMode;
 
 	const handleClick = (url) => {
-		window.location.href = url;
+		window.open(url, "_blank");
 	};
 
 	return (

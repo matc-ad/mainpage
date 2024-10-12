@@ -31,7 +31,7 @@ export const roadmapItems = [
 	{
 		description:
 			"Creació subdominis facils (peix, transparencia) de la administraciò.",
-		date: "4/10/2024",
+		date: "13/10/2024",
 	},
 	{
 		description: "Inici de peix@matc.ad.",
@@ -91,6 +91,7 @@ export const navLinks = [
 
 export const colorsOptions = {
 	darkMode: {
+		navbarBackground: "bg-gray-900",
 		background: "bg-gray-800",
 		divBackground: "bg-gray-700",
 		text: "text-white",
@@ -102,8 +103,9 @@ export const colorsOptions = {
 		buttonHoverBackground: "hover:bg-blue-600",
 	},
 	lightMode: {
-		background: "bg-gray-300",
-		divBackground: "bg-gray-200",
+		navbarBackground: "bg-gray-100",
+		background: "bg-gray-200",
+		divBackground: "bg-gray-300",
 		text: "text-black",
 		title: "text-green-700",
 		paragraph: "text-gray-700",
@@ -174,6 +176,11 @@ export const randomMessage = [
 	"Recordeu el principi bàsic, sempre hi ha que pensar.",
 	"There are two kinds of people. Those who can extrapolate information.",
 	"Es el vecino el que elige al alcalde y es el alcalde el que quiere que sean los vecinos el alcalde.",
-	"Mai et renunciaré, mai et defraudarè, mai et farè la croqueta i et convertirè en una postra.",
+	"Mai et renunciaré, mai et defraudaré, mai et faré la croqueta i et convertiré en una postra.",
 	"En cuanto al examen, entrará lo que hemos visto hasta ahora, lo que aún no hemos visto no.",
+	"En terminos [...], Vapore...",
+	"Si MatCAD es tan guai, per que no hi ha MatCAD 2?",
+	"els erorrs ortogafics els corretjeix un altre,jo.no",
+	"E2",
+	"God gives his hardest battles to his strongest warriors. I am not one of them. Please stop.",
 ];
