@@ -139,7 +139,7 @@ export const redireccions = [
 	{ page: "song", url: "https://youtu.be/dQw4w9WgXcQ" },
 	{
 		page: "formulari",
-		url: "https://cryptpad.malacher.fr/form/#/3/form/view/08f6758ff5da97cdc3da39518655b39d/",
+		url: "https://cryptpad.malacher.fr/form/#/3/form/view/08f6758ff5da97cdc3da39518655b39d/g",
 	},
 	...subdomainsOptions.map((subdomain) => ({
 		page: subdomain.title,
