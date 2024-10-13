@@ -137,7 +137,10 @@ export const subdomainsOptions = [
 export const redireccions = [
 	{ page: "apunts", url: "https://github.com/TheRepSter/Apunts-MatCAD" },
 	{ page: "song", url: "https://youtu.be/dQw4w9WgXcQ" },
-	{ page: "formulari", url: "https://youtu.be/dQw4w9WgXcQ" },
+	{
+		page: "formulari",
+		url: "https://cryptpad.malacher.fr/form/#/3/form/view/08f6758ff5da97cdc3da39518655b39d/",
+	},
 	...subdomainsOptions.map((subdomain) => ({
 		page: subdomain.title,
 		url: subdomain.url,
