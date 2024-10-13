@@ -124,14 +124,14 @@ export const subdomainsOptions = [
 	},
 	{
 		title: "peix",
-		description: "Acudits de peixos. Res més.",
+		description: "Tot es un peix.",
 		url: "https://peix.matc.ad",
 	},
-	{
-		title: "repster",
-		description: "Pagina de RepSter.",
-		url: "https://repster.matc.ad",
-	},
+	// {
+	// 	title: "repster",
+	// 	description: "Página de RepSter.",
+	// 	url: "https://repster.matc.ad",
+	// }
 ];
 
 export const redireccions = [
