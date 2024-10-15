@@ -7,20 +7,17 @@ const formatDate = (dateStr) => {
 	return `${day.padStart(2, "0")}/${month.padStart(2, "0")}/${year}`;
 };
 
-const shiftedRoadmapItems = roadmapItems
-	.map((item) => {
-		var timestamp = new Date().getTime()
-		if (!item.fixed) {
-			var date = new Date(timestamp + 86400000*Number(item.date))
-			var month = date.getMonth()+1
-			console.log(item.description)
-			console.log(month)
-			console.log(timestamp + 86400*Number(item.date))
-			console.log(item.date)
-			item.date = formatDate(date.getDate()+"/"+month+"/"+date.getFullYear())
-		}
-		return item
-	})
+const shiftedRoadmapItems = roadmapItems.map((item) => {
+	var timestamp = new Date().getTime();
+	if (!item.fixed) {
+		var date = new Date(timestamp + 86400000 * Number(item.date));
+		var month = date.getMonth() + 1;
+		item.date = formatDate(
+			date.getDate() + "/" + month + "/" + date.getFullYear(),
+		);
+	}
+	return item;
+});
 
 const sortedRoadmapItems = shiftedRoadmapItems
 	.map((item) => ({
