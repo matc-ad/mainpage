@@ -172,7 +172,7 @@ export const randomMessage = [
 	"Teorema de pitagores 2 released: a² + b² = c² + AI",
 	"What",
 	"Pēdīcābo ego vōs et irrumābō",
-	"Ferroviaria.cat my best friend.",
+	"<a href=https://ferroviaria.cat>Ferroviaria.cat</a> my best friend.",
 	"Mola cantidubi.",
 	"Mort? Qui t'ha mort? La justicia et reclama.",
 	"Ni ou ni castanya aquest mort està ben mort.",
