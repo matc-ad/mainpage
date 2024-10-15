@@ -71,7 +71,7 @@ export const preguntesFreq = [
 	{
 		question: "Què més fa aquesta pàgina web a part de demanar diners?",
 		answer:
-			"Pot redirigir altres pàgines com un acurtador d'enllaços. Prova matc.ad/song (nota: ara mateix no tenim matc.ad però es pot fer amb matcad.pages.dev/song).",
+			"Pot redirigir altres pàgines com un acurtador d'enllaços. Prova <a href=/song>matc.ad/song</a>.",
 	},
 	{
 		question: "Puc demanar una redirecció?",
@@ -81,7 +81,7 @@ export const preguntesFreq = [
 	{
 		question: "Es [inserir cosa] un peix?",
 		answer:
-			"Segurament, per a més informació visita <a href=peix.matc.ad>peix.matc.ad</a>",
+			"Segurament, per a més informació visita <a href=https://peix.matc.ad>peix.matc.ad</a>",
 	},
 ];
 

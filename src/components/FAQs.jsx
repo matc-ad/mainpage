@@ -6,7 +6,12 @@ const FAQItem = ({ question, answer, colors }) => (
 		className={`items-center p-6 border ${colors.border} rounded-lg shadow-md mb-8 ${colors.divBackground}`}
 	>
 		<h3 className={`text-2xl font-bold ${colors.title}`}>{question}</h3>
-		<p className={`mt-2 ${colors.paragraph}`}>{answer}</p>
+		<p
+			className={`mt-2 ${colors.paragraph}`}
+			dangerouslySetInnerHTML={{
+				__html: answer.replace(/<a /g, `<a class="${colors.title}" `),
+			}}
+		></p>
 	</div>
 );
 
