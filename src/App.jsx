@@ -27,7 +27,7 @@ const App = () => {
 	const toggleDarkMode = () => {
 		setIsDarkMode((prevMode) => {
 			const newMode = !prevMode;
-			Cookies.set("darkMode", newMode, { expires: 365 });
+			Cookies.set("darkMode", newMode, { expires: 365, domain: "matc.ad" });
 			return newMode;
 		});
 	};

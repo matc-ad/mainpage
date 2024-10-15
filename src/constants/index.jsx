@@ -186,4 +186,7 @@ export const randomMessage = [
 	"els erorrs ortogafics els corretjeix un altre,jo.no",
 	"E2",
 	"God gives his hardest battles to his strongest warriors. I am not one of them. Please stop.",
+	"La peste de la petrocefalia es mi pez favorito.",
+	"La meva asignatura favorita: Modelització e indiferencia.",
+	"Casualidad no puede ser, que Jesucristo...",
 ];
