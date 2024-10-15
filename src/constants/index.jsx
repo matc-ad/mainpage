@@ -26,32 +26,39 @@ export const modalitatsOptions = [
 export const roadmapItems = [
 	{
 		description: "Conseguim matc.ad.",
+		fixed: true,
 		date: "16/10/2024",
 	},
 	{
 		description:
 			"Creació subdominis facils (peix, transparencia) de la administraciò.",
-		date: "13/10/2024",
+		fixed: false,
+		date: "10",
 	},
 	{
 		description: "Inici de peix@matc.ad.",
-		date: "25/10/2024",
+		fixed: false,
+		date: "11",
 	},
 	{
 		description: "Creació del mailing system.",
-		date: "23/10/2024",
+		fixed: false,
+		date: "13",
 	},
 	{
 		description: "Inici de newslater@matc.ad.",
-		date: "25/10/2024",
+		fixed: false,
+		date: "11",
 	},
 	{
 		description: "Inici de editor.matc.ad.",
-		date: "16/11/2024",
+		fixed: false,
+		date: "12",
 	},
 	{
 		description: "Inici de git.matc.ad.",
-		date: "13/12/2024",
+		fixed: false,
+		date: "20",
 	},
 ];
 

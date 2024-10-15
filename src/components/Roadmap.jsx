@@ -7,7 +7,15 @@ const formatDate = (dateStr) => {
 	return `${day.padStart(2, "0")}/${month.padStart(2, "0")}/${year}`;
 };
 
-const sortedRoadmapItems = roadmapItems
+const shiftedRoadmapItems = roadmapItems
+	.map((item) => {
+		if (item.fixed) {
+			date = Date(new Date().getTime() + 86400*item.date)
+			item.date = formatDate(date.getDate()+"/"+date.getMonth()+1+"/"+date.getFullYear())
+		}
+	})
+
+const sortedRoadmapItems = shiftedRoadmapItems
 	.map((item) => ({
 		...item,
 		date: formatDate(item.date),
