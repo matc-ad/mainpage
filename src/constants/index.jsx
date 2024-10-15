@@ -81,7 +81,7 @@ export const preguntesFreq = [
 	{
 		question: "Es [inserir cosa] un peix?",
 		answer:
-			"Segurament, per a més informació visita peix.matc.ad",
+			"Segurament, per a més informació visita <a href=peix.matc.ad>peix.matc.ad</a>",
 	},
 ];
 
