@@ -44,9 +44,12 @@ const Header = ({ isDarkMode }) => {
 				<h1 className={`text-5xl font-extrabold mb-6 ${colors.title}`}>
 					Benvingut a matc.ad
 				</h1>
-				<p className={`text-xl font-sans ${colors.paragraph}`}>
-					{dynamicMessage}
-				</p>
+				<p 
+					className={`text-xl font-sans ${colors.paragraph}`}
+					dangerouslySetInnerHTML={{
+						__html: dynamicMessage.replace(/<a /g, `<a class="${colors.title}" `),
+					}}
+				></p>
 				<button
 					onClick={handleButtonClick}
 					className={`mt-6 font-bold py-2 px-6 rounded-full shadow-lg ${colors.buttonBackground} ${colors.buttonText} ${colors.buttonHoverBackground}`}
