@@ -203,5 +203,5 @@ export const randomMessage = [
 	"La meva asignatura favorita: Modelització e indiferencia.",
 	"Casualidad no puede ser, que Jesucristo...",
 	":(){ :|:& };:",
-	"El pa amb mandarina és de terroristes (francesos)",
+	"El pa amb tomaquet i mandarina és de terroristes (francesos)",
 ];
