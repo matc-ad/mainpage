@@ -10,7 +10,7 @@ const formatDate = (dateStr) => {
 const shiftedRoadmapItems = roadmapItems
 	.map((item) => {
 		if (item.fixed) {
-			date = Date(new Date().getTime() + 86400*item.date)
+			var date = new Date(new Date().getTime() + 86400*item.date)
 			item.date = formatDate(date.getDate()+"/"+date.getMonth()+1+"/"+date.getFullYear())
 		}
 	})
