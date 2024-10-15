@@ -187,7 +187,7 @@ export const randomMessage = [
 	"Graphic dessign is my passion.",
 	"Una diferencial es una fracció;",
 	"Buenos días, comenzamos.",
-	"tetr.io?",
+	"<a href=https://tetr.io>tetr.io</a>?",
 	"Hola. ¿Hay alguien ahí?",
 	"Recordeu el principi bàsic, sempre hi ha que pensar.",
 	"There are two kinds of people. Those who can extrapolate information.",
