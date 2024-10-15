@@ -204,4 +204,6 @@ export const randomMessage = [
 	"Casualidad no puede ser, que Jesucristo...",
 	":(){ :|:& };:",
 	"El pa amb tomaquet i mandarina és de terroristes (francesos)",
+	"M'ho he descarregat de la pàgina oficial, espero.",
+	"Perquè està en grec?",
 ];
