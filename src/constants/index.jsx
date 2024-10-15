@@ -58,7 +58,7 @@ export const roadmapItems = [
 	{
 		description: "Inici de git.matc.ad.",
 		fixed: false,
-		date: "20",
+		date: "60",
 	},
 ];
 

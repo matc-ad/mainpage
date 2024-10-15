@@ -9,10 +9,17 @@ const formatDate = (dateStr) => {
 
 const shiftedRoadmapItems = roadmapItems
 	.map((item) => {
-		if (item.fixed) {
-			var date = new Date(new Date().getTime() + 86400*item.date)
-			item.date = formatDate(date.getDate()+"/"+date.getMonth()+1+"/"+date.getFullYear())
+		var timestamp = new Date().getTime()
+		if (!item.fixed) {
+			var date = new Date(timestamp + 86400000*Number(item.date))
+			var month = date.getMonth()+1
+			console.log(item.description)
+			console.log(month)
+			console.log(timestamp + 86400*Number(item.date))
+			console.log(item.date)
+			item.date = formatDate(date.getDate()+"/"+month+"/"+date.getFullYear())
 		}
+		return item
 	})
 
 const sortedRoadmapItems = shiftedRoadmapItems
