@@ -169,7 +169,8 @@ export const randomMessage = [
 	"La vida es més dura, espabila.",
 	"MatCAD està en una bona situació; no té un dia al calendari.",
 	"Entenc que es massa llarga per tu.",
-	"Teorema de pitagores 2 released: a + b = c + AI",
+	"Teorema de pitagores 2 released: a² + b² = c² + AI",
+	"What",
 	"Pēdīcābo ego vōs et irrumābō",
 	"Ferroviaria.cat my best friend.",
 	"Mola cantidubi.",
@@ -201,4 +202,6 @@ export const randomMessage = [
 	"La peste de la petrocefalia es mi pez favorito.",
 	"La meva asignatura favorita: Modelització e indiferencia.",
 	"Casualidad no puede ser, que Jesucristo...",
+	":(){ :|:& };:",
+	"El pa amb mandarina és de terroristes (francesos)",
 ];
