@@ -6,7 +6,7 @@ const Footer = ({ isDarkMode }) => {
 
 	return (
 		<footer
-			className={`text-center py-5 ${colors.divBackground} ${colors.text}`}
+			className={`text-center py-5 ${colors.navbarBackground} ${colors.text}`}
 		>
 			<p>&copy; 2024 matc.ad. Tots els drets reservats.</p>
 		</footer>
