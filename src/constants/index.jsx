@@ -78,6 +78,11 @@ export const preguntesFreq = [
 		answer:
 			"Sí. Dona-li al formulari de contacte i allà pots enviar una petició.",
 	},
+	{
+		question: "Es [inserir cosa] un peix?",
+		answer:
+			"Segurament, per a més informació visita peix.matc.ad",
+	},
 ];
 
 export const navLinks = [
