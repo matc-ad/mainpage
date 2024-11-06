@@ -151,7 +151,7 @@ export const redireccions = [
 	{ page: "song", url: "https://youtu.be/dQw4w9WgXcQ" },
 	{
 		page: "formulari",
-		url: "https://cryptpad.malacher.fr/form/#/3/form/view/08f6758ff5da97cdc3da39518655b39d/g",
+		url: "https://cryptpad.malacher.fr/form/#/2/form/view/Ksbf4HrmMnV46CcuDrOAu7jfmY-0N2dp8s6GlBb6qcY/",
 	},
 	...subdomainsOptions.map((subdomain) => ({
 		page: subdomain.title,
