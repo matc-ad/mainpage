@@ -149,6 +149,7 @@ export const subdomainsOptions = [
 export const redireccions = [
 	{ page: "apunts", url: "https://github.com/TheRepSter/Apunts-MatCAD" },
 	{ page: "song", url: "https://youtu.be/dQw4w9WgXcQ" },
+	{ page: "examens", url: "https://www.uab.cat/doc/examens-MatCAD" },
 	{
 		page: "formulari",
 		url: "https://cryptpad.malacher.fr/form/#/2/form/view/Ksbf4HrmMnV46CcuDrOAu7jfmY-0N2dp8s6GlBb6qcY/",
